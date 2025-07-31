@@ -9,10 +9,14 @@ process.on("uncaughtException", (err) => {
   process.exit(1);
 });
 
-// Config
-if (process.env.NODE_ENV !== "PRODUCTION") {
-  require("dotenv").config({ path: "backend/config/config.env" });
-}
+// Config - Load environment variables
+require("dotenv").config({ path: "backend/config/config.env" });
+
+// Debug environment variables
+console.log("🔧 Environment Check:");
+console.log("NODE_ENV:", process.env.NODE_ENV);
+console.log("PORT:", process.env.PORT);
+console.log("DB_URI exists:", !!process.env.DB_URI);
 
 // Connecting to database
 connectDatabase();
