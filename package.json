@@ -9,6 +9,8 @@
     "dev": "nodemon backend/server.js",
     "build": "npm install && cd frontend && npm install && npm run build && cd ..",
     "render-build": "npm install && cd frontend && npm install && npm run build",
+    "seed": "node backend/seeder.js",
+    "seed:destroy": "node backend/seeder.js -d",
     "heroku-postbuild": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "",
